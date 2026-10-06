@@ -1,0 +1,1334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mudit Sawhney | Business Analyst / Strategy Consultant</title>
+
+    <style>
+        /* Basic page settings */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f4f7fb;
+            color: #172033;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Main website container */
+        .container {
+            width: min(1100px, 92%);
+            margin: auto;
+        }
+
+        /* Header section */
+        header {
+            min-height: 520px;
+            background: linear-gradient(135deg, #0b1f33, #123d5a);
+            color: white;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: "";
+            position: absolute;
+            width: 350px;
+            height: 350px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            top: -120px;
+            right: -80px;
+        }
+
+        header::after {
+            content: "";
+            position: absolute;
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.04);
+            bottom: -120px;
+            left: -80px;
+        }
+
+        .hero {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            padding: 70px 0;
+        }
+
+        /* Round profile photo */
+        .profile-photo {
+            width: 190px;
+            height: 190px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 6px solid rgba(255, 255, 255, 0.85);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+            flex-shrink: 0;
+        }
+
+        /* Hero text */
+        .hero-content h1 {
+            font-size: clamp(38px, 6vw, 64px);
+            line-height: 1.05;
+            margin-bottom: 12px;
+            letter-spacing: -1.5px;
+        }
+
+        .hero-title {
+            font-size: clamp(20px, 3vw, 28px);
+            color: #d9eaff;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .hero-subtitle {
+            font-size: 17px;
+            color: #c6d5e4;
+            margin-bottom: 24px;
+        }
+
+        .linkedin-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 11px 18px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 8px;
+            color: white;
+            transition: 0.25s;
+        }
+
+        .linkedin-link:hover {
+            background: white;
+            color: #123d5a;
+        }
+
+        /* Main content */
+        main {
+            padding: 70px 0;
+        }
+
+        /* Individual content sections */
+        .section {
+            background: white;
+            border-radius: 18px;
+            padding: 40px;
+            margin-bottom: 28px;
+            box-shadow: 0 8px 30px rgba(15, 38, 60, 0.07);
+        }
+
+        .section-heading {
+            font-size: 30px;
+            color: #0b1f33;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 12px;
+        }
+
+        .section-heading::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 55px;
+            height: 4px;
+            background: #1d6fa5;
+            border-radius: 10px;
+        }
+
+        .about-text {
+            font-size: 18px;
+            color: #536274;
+            max-width: 850px;
+        }
+
+        /* Skills tags */
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .skill-tag {
+            background: #eaf3f9;
+            color: #0b4c73;
+            border: 1px solid #c9e0ed;
+            padding: 9px 17px;
+            border-radius: 50px;
+            font-size: 15px;
+            font-weight: 600;
+        }
+
+        /* Education cards */
+        .education-list {
+            display: grid;
+            gap: 20px;
+        }
+
+        .education-card {
+            border-left: 4px solid #1d6fa5;
+            padding: 18px 22px;
+            background: #f8fafc;
+            border-radius: 0 12px 12px 0;
+        }
+
+        .education-card h3 {
+            color: #0b1f33;
+            font-size: 20px;
+            margin-bottom: 5px;
+        }
+
+        .degree {
+            color: #35475a;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .duration {
+            color: #728092;
+            font-size: 14px;
+        }
+
+        /* Empty information sections are hidden */
+        .optional-section {
+            display: none;
+        }
+
+        /* Connect section */
+        .connect-section {
+            text-align: center;
+            background: linear-gradient(135deg, #0b1f33, #123d5a);
+            color: white;
+            padding: 55px 30px;
+            border-radius: 20px;
+        }
+
+        .connect-section h2 {
+            font-size: 34px;
+            margin-bottom: 10px;
+        }
+
+        .connect-section p {
+            color: #d4e2ee;
+            margin-bottom: 28px;
+        }
+
+        .connect-button {
+            border: none;
+            background: white;
+            color: #0b1f33;
+            padding: 16px 34px;
+            border-radius: 10px;
+            font-size: 17px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.25s;
+        }
+
+        .connect-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 30px 15px;
+            color: #718096;
+            font-size: 14px;
+        }
+
+        /* Popup background */
+        .modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(4, 17, 29, 0.75);
+            z-index: 9999;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        .modal.show {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Popup box */
+        .modal-content {
+            background: white;
+            width: min(560px, 100%);
+            border-radius: 18px;
+            padding: 32px;
+            position: relative;
+            box-shadow: 0 25px 70px rgba(0, 0, 0, 0.3);
+            animation: modalIn 0.2s ease-out;
+        }
+
+        @keyframes modalIn {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .modal-content h2 {
+            color: #0b1f33;
+            margin-bottom: 6px;
+            font-size: 27px;
+        }
+
+        .modal-description {
+            color: #718096;
+            margin-bottom: 24px;
+            font-size: 14px;
+        }
+
+        /* Close button */
+        .close-button {
+            position: absolute;
+            top: 14px;
+            right: 18px;
+            width: 38px;
+            height: 38px;
+            border: none;
+            background: #f0f3f6;
+            border-radius: 50%;
+            font-size: 24px;
+            cursor: pointer;
+            color: #26394c;
+        }
+
+        .close-button:hover {
+            background: #e2e7ec;
+        }
+
+        /* Form fields */
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 14px;
+            font-weight: 700;
+            color: #26394c;
+            margin-bottom: 7px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            border: 1px solid #ccd5df;
+            border-radius: 9px;
+            padding: 13px 14px;
+            font-size: 15px;
+            font-family: inherit;
+            outline: none;
+            transition: 0.2s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: #1d6fa5;
+            box-shadow: 0 0 0 3px rgba(29, 111, 165, 0.1);
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        /* Phone input layout */
+        .phone-wrapper {
+            display: flex;
+            gap: 8px;
+        }
+
+        .country-box {
+            width: 145px;
+            min-width: 145px;
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            border: 1px solid #ccd5df;
+            border-radius: 9px;
+            padding: 0 8px;
+            background: white;
+        }
+
+        .country-box img {
+            width: 24px;
+            height: 18px;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        .country-box select {
+            border: none;
+            outline: none;
+            background: transparent;
+            font-size: 14px;
+            width: 100%;
+            cursor: pointer;
+        }
+
+        .phone-input {
+            flex: 1;
+        }
+
+        /* Error messages */
+        .error-message {
+            display: none;
+            color: #d93025;
+            font-size: 13px;
+            margin-top: 6px;
+        }
+
+        .error-message.show {
+            display: block;
+        }
+
+        .input-error {
+            border-color: #d93025 !important;
+        }
+
+        /* Success and general form messages */
+        .form-message {
+            display: none;
+            margin-top: 15px;
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 14px;
+        }
+
+        .form-message.success {
+            display: block;
+            background: #eaf8ef;
+            color: #177245;
+        }
+
+        .form-message.error {
+            display: block;
+            background: #fff0f0;
+            color: #c62828;
+        }
+
+        /* Submit button */
+        .submit-button {
+            width: 100%;
+            border: none;
+            background: #0b1f33;
+            color: white;
+            padding: 14px;
+            border-radius: 9px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.25s;
+        }
+
+        .submit-button:hover:not(:disabled) {
+            background: #123d5a;
+        }
+
+        .submit-button:disabled {
+            opacity: 0.65;
+            cursor: not-allowed;
+        }
+
+        /* Mobile design */
+        @media (max-width: 700px) {
+            header {
+                min-height: auto;
+            }
+
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                padding: 60px 0;
+                gap: 28px;
+            }
+
+            .profile-photo {
+                width: 150px;
+                height: 150px;
+            }
+
+            .section {
+                padding: 28px 22px;
+            }
+
+            .section-heading {
+                font-size: 26px;
+            }
+
+            .about-text {
+                font-size: 16px;
+            }
+
+            .phone-wrapper {
+                flex-direction: column;
+            }
+
+            .country-box {
+                width: 100%;
+                height: 48px;
+            }
+
+            .modal-content {
+                padding: 27px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header with profile photo and main information -->
+    <header>
+        <div class="container hero">
+
+            <img
+                src="profile.jpg"
+                alt="Mudit Sawhney"
+                class="profile-photo"
+            >
+
+            <div class="hero-content">
+                <h1>Mudit Sawhney</h1>
+
+                <div class="hero-title">
+                    Aspiring Business Analyst / Strategy Consultant
+                </div>
+
+                <div class="hero-subtitle">
+                    MBA Candidate (Business Analytics) | B.Tech Graduate
+                </div>
+
+                <a
+                    class="linkedin-link"
+                    href="https://www.linkedin.com/in/mudit-sawhney"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    LinkedIn ↗
+                </a>
+            </div>
+
+        </div>
+    </header>
+
+
+    <!-- Main website content -->
+    <main>
+        <div class="container">
+
+            <!-- About section -->
+            <section class="section">
+                <h2 class="section-heading">About</h2>
+
+                <p class="about-text">
+                    Aspiring Business Analyst / Strategy Consultant with an
+                    MBA focus in Business Analytics and a B.Tech background,
+                    interested in transforming complex data into business
+                    decisions.
+                </p>
+            </section>
+
+
+            <!-- Skills section -->
+            <section class="section">
+                <h2 class="section-heading">Skills</h2>
+
+                <div class="skills">
+                    <span class="skill-tag">Java</span>
+                    <span class="skill-tag">C++</span>
+                    <span class="skill-tag">C (Programming Language)</span>
+                </div>
+            </section>
+
+
+            <!-- Education section -->
+            <section class="section">
+                <h2 class="section-heading">Education</h2>
+
+                <div class="education-list">
+
+                    <article class="education-card">
+                        <h3>Chandigarh University</h3>
+
+                        <div class="degree">
+                            Master of Business Administration,
+                            Business Administration and Management, General
+                        </div>
+
+                        <div class="duration">
+                            July 2026 – July 2028
+                        </div>
+                    </article>
+
+
+                    <article class="education-card">
+                        <h3>Vellore Institute of Technology</h3>
+
+                        <div class="degree">
+                            Bachelor of Technology
+                        </div>
+
+                        <div class="duration">
+                            September 2021 – May 2025
+                        </div>
+                    </article>
+
+                </div>
+            </section>
+
+
+            <!-- Connect section -->
+            <section class="connect-section">
+                <h2>Let's Connect</h2>
+
+                <p>
+                    Have an enquiry or want to get in touch?
+                    Send me a message.
+                </p>
+
+                <button
+                    type="button"
+                    class="connect-button"
+                    id="connectButton"
+                >
+                    Connect with me
+                </button>
+            </section>
+
+        </div>
+    </main>
+
+
+    <!-- Footer -->
+    <footer>
+        © 2026 Mudit Sawhney. All rights reserved.
+    </footer>
+
+
+    <!-- Enquiry popup -->
+    <div
+        class="modal"
+        id="enquiryModal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modalTitle"
+    >
+        <div class="modal-content">
+
+            <button
+                type="button"
+                class="close-button"
+                id="closeButton"
+                aria-label="Close enquiry form"
+            >
+                ×
+            </button>
+
+            <h2 id="modalTitle">Connect with me</h2>
+
+            <p class="modal-description">
+                Fill in the details below and send your enquiry.
+            </p>
+
+
+            <!-- Enquiry form -->
+            <form id="enquiryForm" novalidate>
+
+                <!-- Full name field -->
+                <div class="form-group">
+                    <label for="fullName">Full name *</label>
+
+                    <input
+                        type="text"
+                        id="fullName"
+                        name="name"
+                        placeholder="Enter your full name"
+                        required
+                        autocomplete="name"
+                    >
+                </div>
+
+
+                <!-- Email field -->
+                <div class="form-group">
+                    <label for="email">Email *</label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="you@example.com"
+                        required
+                        autocomplete="email"
+                    >
+
+                    <div
+                        class="error-message"
+                        id="emailError"
+                    >
+                        Please enter a valid email address.
+                    </div>
+                </div>
+
+
+                <!-- Mobile field -->
+                <div class="form-group">
+                    <label for="mobile">Mobile number *</label>
+
+                    <div class="phone-wrapper">
+
+                        <div class="country-box">
+
+                            <img
+                                id="countryFlag"
+                                src="https://flagcdn.com/24x18/in.png"
+                                alt="India flag"
+                            >
+
+                            <select
+                                id="countryCode"
+                                aria-label="Country code"
+                            >
+                                <option value="IN" data-dial="+91">
+                                    IN +91
+                                </option>
+
+                                <option value="US" data-dial="+1">
+                                    US +1
+                                </option>
+
+                                <option value="GB" data-dial="+44">
+                                    GB +44
+                                </option>
+
+                                <option value="AE" data-dial="+971">
+                                    AE +971
+                                </option>
+
+                                <option value="CA" data-dial="+1">
+                                    CA +1
+                                </option>
+
+                                <option value="AU" data-dial="+61">
+                                    AU +61
+                                </option>
+
+                                <option value="SG" data-dial="+65">
+                                    SG +65
+                                </option>
+
+                                <option value="SA" data-dial="+966">
+                                    SA +966
+                                </option>
+
+                                <option value="QA" data-dial="+974">
+                                    QA +974
+                                </option>
+
+                                <option value="NP" data-dial="+977">
+                                    NP +977
+                                </option>
+
+                                <option value="BD" data-dial="+880">
+                                    BD +880
+                                </option>
+
+                                <option value="LK" data-dial="+94">
+                                    LK +94
+                                </option>
+
+                                <option value="DE" data-dial="+49">
+                                    DE +49
+                                </option>
+                            </select>
+
+                        </div>
+
+                        <input
+                            type="tel"
+                            id="mobile"
+                            name="mobile"
+                            class="phone-input"
+                            placeholder="9876543210"
+                            required
+                            inputmode="numeric"
+                            pattern="[6-9][0-9]{9}"
+                            autocomplete="tel"
+                        >
+
+                    </div>
+
+                    <div
+                        class="error-message"
+                        id="mobileError"
+                    >
+                        Please enter a valid mobile number.
+                    </div>
+                </div>
+
+
+                <!-- Enquiry field -->
+                <div class="form-group">
+                    <label for="enquiry">Enquiry *</label>
+
+                    <textarea
+                        id="enquiry"
+                        name="enquiry"
+                        placeholder="Write your enquiry..."
+                        required
+                    ></textarea>
+                </div>
+
+
+                <!-- Form message -->
+                <div
+                    class="form-message"
+                    id="formMessage"
+                ></div>
+
+
+                <!-- Submit button -->
+                <button
+                    type="submit"
+                    class="submit-button"
+                    id="submitButton"
+                >
+                    Submit
+                </button>
+
+            </form>
+
+        </div>
+    </div>
+
+
+    <script>
+        // Store the n8n webhook URL here.
+        const WEBHOOK_URL = "https://mudit09.app.n8n.cloud/webhook-test/cv-enquiry";
+
+        // Add your optional IPinfo token here.
+        const IPINFO_TOKEN = "";
+
+        // Use this email pattern to check the email address.
+        const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+
+
+        // Get the main page elements.
+        const connectButton = document.getElementById("connectButton");
+        const enquiryModal = document.getElementById("enquiryModal");
+        const closeButton = document.getElementById("closeButton");
+        const enquiryForm = document.getElementById("enquiryForm");
+
+        const fullName = document.getElementById("fullName");
+        const email = document.getElementById("email");
+        const mobile = document.getElementById("mobile");
+        const enquiry = document.getElementById("enquiry");
+
+        const countryCode = document.getElementById("countryCode");
+        const countryFlag = document.getElementById("countryFlag");
+
+        const emailError = document.getElementById("emailError");
+        const mobileError = document.getElementById("mobileError");
+
+        const submitButton = document.getElementById("submitButton");
+        const formMessage = document.getElementById("formMessage");
+
+
+        // Store the visitor location returned by IPinfo.
+        let visitorLocation = {
+            city: "",
+            region: "",
+            country: ""
+        };
+
+
+        // Remember if the IPinfo request has already been made.
+        let ipInfoLoaded = false;
+
+
+        // Change the flag when the country changes.
+        function updateCountryFlag() {
+            const selectedCountry = countryCode.value.toLowerCase();
+
+            countryFlag.src =
+                "https://flagcdn.com/24x18/" +
+                selectedCountry +
+                ".png";
+        }
+
+
+        // Update the phone rule for the selected country.
+        function updatePhonePattern() {
+            if (countryCode.value === "IN") {
+                mobile.pattern = "[6-9][0-9]{9}";
+                mobile.placeholder = "9876543210";
+            } else {
+                mobile.pattern = "[0-9]{6,15}";
+                mobile.placeholder = "Enter 6 to 15 digits";
+            }
+
+            mobile.value = "";
+            mobileError.classList.remove("show");
+            mobile.classList.remove("input-error");
+        }
+
+
+        // Select a country from the IPinfo response.
+        function selectCountryFromIP(country) {
+            if (!country) {
+                countryCode.value = "IN";
+                updateCountryFlag();
+                updatePhonePattern();
+                return;
+            }
+
+            const countryUpper = country.toUpperCase();
+
+            const availableOption =
+                Array.from(countryCode.options).find(
+                    option => option.value === countryUpper
+                );
+
+            if (availableOption) {
+                countryCode.value = countryUpper;
+            } else {
+                countryCode.value = "IN";
+            }
+
+            updateCountryFlag();
+            updatePhonePattern();
+        }
+
+
+        // Call IPinfo once when the popup is opened.
+        async function loadVisitorLocation() {
+            if (ipInfoLoaded) {
+                return;
+            }
+
+            ipInfoLoaded = true;
+
+            try {
+                let ipInfoURL = "https://ipinfo.io/json";
+
+                if (IPINFO_TOKEN.trim() !== "") {
+                    ipInfoURL +=
+                        "?token=" +
+                        encodeURIComponent(IPINFO_TOKEN.trim());
+                }
+
+                const response = await fetch(ipInfoURL);
+
+                if (!response.ok) {
+                    throw new Error("IPinfo request failed");
+                }
+
+                const info = await response.json();
+
+                // Print the complete IPinfo reply in the browser console.
+                console.log("IPinfo reply:", info);
+
+                visitorLocation.city = info.city || "";
+                visitorLocation.region = info.region || "";
+                visitorLocation.country = info.country || "";
+
+                selectCountryFromIP(info.country);
+
+            } catch (error) {
+
+                // If IPinfo fails, silently use India.
+                console.log(
+                    "IPinfo lookup failed. Using India as default."
+                );
+
+                visitorLocation = {
+                    city: "",
+                    region: "",
+                    country: ""
+                };
+
+                countryCode.value = "IN";
+                updateCountryFlag();
+                updatePhonePattern();
+            }
+        }
+
+
+        // Open the enquiry popup.
+        function openModal() {
+            enquiryModal.classList.add("show");
+
+            document.body.style.overflow = "hidden";
+
+            loadVisitorLocation();
+
+            setTimeout(() => {
+                fullName.focus();
+            }, 100);
+        }
+
+
+        // Close the enquiry popup.
+        function closeModal() {
+            enquiryModal.classList.remove("show");
+
+            document.body.style.overflow = "";
+        }
+
+
+        // Check the email address.
+        function validateEmail() {
+            const emailValue = email.value.trim();
+
+            if (!EMAIL_REGEX.test(emailValue)) {
+                emailError.textContent =
+                    "Please enter a valid email address.";
+
+                emailError.classList.add("show");
+                email.classList.add("input-error");
+
+                return false;
+            }
+
+            emailError.classList.remove("show");
+            email.classList.remove("input-error");
+
+            return true;
+        }
+
+
+        // Check the mobile number.
+        function validateMobile() {
+            const mobileValue = mobile.value.trim();
+
+            let valid = false;
+
+            if (countryCode.value === "IN") {
+
+                valid = /^[6-9][0-9]{9}$/.test(mobileValue);
+
+                if (!valid) {
+                    mobileError.textContent =
+                        "For India, enter exactly 10 digits starting with 6, 7, 8 or 9.";
+                }
+
+            } else {
+
+                valid = /^[0-9]{6,15}$/.test(mobileValue);
+
+                if (!valid) {
+                    mobileError.textContent =
+                        "Enter a mobile number with 6 to 15 digits.";
+                }
+            }
+
+            if (!valid) {
+                mobileError.classList.add("show");
+                mobile.classList.add("input-error");
+                return false;
+            }
+
+            mobileError.classList.remove("show");
+            mobile.classList.remove("input-error");
+
+            return true;
+        }
+
+
+        // Show a message above the submit button.
+        function showFormMessage(message, type) {
+            formMessage.textContent = message;
+
+            formMessage.className =
+                "form-message " + type;
+        }
+
+
+        // Clear the form message.
+        function clearFormMessage() {
+            formMessage.textContent = "";
+            formMessage.className = "form-message";
+        }
+
+
+        // Listen for country changes.
+        countryCode.addEventListener("change", function () {
+            updateCountryFlag();
+            updatePhonePattern();
+        });
+
+
+        // Check the email when the user leaves the field.
+        email.addEventListener("blur", function () {
+            if (email.value.trim() !== "") {
+                validateEmail();
+            }
+        });
+
+
+        // Check the mobile when the user leaves the field.
+        mobile.addEventListener("blur", function () {
+            if (mobile.value.trim() !== "") {
+                validateMobile();
+            }
+        });
+
+
+        // Open the popup when Connect with me is clicked.
+        connectButton.addEventListener("click", function () {
+            openModal();
+        });
+
+
+        // Close the popup when the X button is clicked.
+        closeButton.addEventListener("click", function () {
+            closeModal();
+        });
+
+
+        // Close the popup when the dark background is clicked.
+        enquiryModal.addEventListener("click", function (event) {
+            if (event.target === enquiryModal) {
+                closeModal();
+            }
+        });
+
+
+        // Close the popup when Escape is pressed.
+        document.addEventListener("keydown", function (event) {
+            if (event.key === "Escape" &&
+                enquiryModal.classList.contains("show")) {
+                closeModal();
+            }
+        });
+
+
+        // Handle form submission.
+        enquiryForm.addEventListener("submit", async function (event) {
+
+            // Stop the normal page reload.
+            event.preventDefault();
+
+            clearFormMessage();
+
+            // Check all required fields.
+            const emailIsValid = validateEmail();
+            const mobileIsValid = validateMobile();
+
+            if (!fullName.value.trim()) {
+                fullName.focus();
+                return;
+            }
+
+            if (!emailIsValid) {
+                email.focus();
+                return;
+            }
+
+            if (!mobileIsValid) {
+                mobile.focus();
+                return;
+            }
+
+            if (!enquiry.value.trim()) {
+                enquiry.focus();
+                return;
+            }
+
+
+            // Check whether the n8n webhook has been added.
+            if (
+                WEBHOOK_URL ===
+                "PASTE_YOUR_N8N_WEBHOOK_URL_HERE"
+            ) {
+                alert(
+                    "Please add your n8n webhook URL to WEBHOOK_URL before submitting."
+                );
+
+                return;
+            }
+
+
+            // Get the selected country dial code.
+            const selectedOption =
+                countryCode.options[countryCode.selectedIndex];
+
+            const dialCode =
+                selectedOption.getAttribute("data-dial");
+
+
+            // Build the data object for n8n.
+            const data = {
+                name: fullName.value.trim(),
+
+                email: email.value.trim(),
+
+                mobile:
+                    dialCode +
+                    " " +
+                    mobile.value.trim(),
+
+                enquiry:
+                    enquiry.value.trim(),
+
+                source: "CV website",
+
+                visitor: {
+                    city: visitorLocation.city || "",
+                    region: visitorLocation.region || "",
+                    country: visitorLocation.country || ""
+                }
+            };
+
+
+            // Print the data in the browser console.
+            console.log("Enquiry data:", data);
+
+
+            // Change the button while the request is running.
+            submitButton.disabled = true;
+            submitButton.textContent = "Sending...";
+
+
+            try {
+
+                // Send the enquiry to the n8n webhook.
+                const response = await fetch(
+                    WEBHOOK_URL,
+                    {
+                        method: "POST",
+
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+
+                        body: JSON.stringify(data)
+                    }
+                );
+
+
+                // Handle a successful reply.
+                if (response.ok) {
+
+                    showFormMessage(
+                        "Thank you, " +
+                        data.name +
+                        ". Your enquiry has been received.",
+                        "success"
+                    );
+
+                    enquiryForm.reset();
+
+                    countryCode.value = "IN";
+
+                    updateCountryFlag();
+                    updatePhonePattern();
+
+                    visitorLocation = {
+                        city: "",
+                        region: "",
+                        country: ""
+                    };
+
+                    return;
+                }
+
+
+                // Handle an n8n 400 error.
+                if (response.status === 400) {
+
+                    let errorData = {};
+
+                    try {
+                        errorData = await response.json();
+                    } catch (jsonError) {
+                        errorData = {};
+                    }
+
+                    const message =
+                        errorData.message ||
+                        "The enquiry could not be submitted.";
+
+                    showFormMessage(
+                        message,
+                        "error"
+                    );
+
+                    return;
+                }
+
+
+                // Handle other server errors.
+                showFormMessage(
+                    "Sorry, something went wrong while sending your enquiry. Please try again.",
+                    "error"
+                );
+
+            } catch (error) {
+
+                // Handle network or connection errors.
+                console.error(
+                    "Webhook error:",
+                    error
+                );
+
+                showFormMessage(
+                    "Sorry, we could not send your enquiry right now. Please try again later.",
+                    "error"
+                );
+
+            } finally {
+
+                // Restore the submit button.
+                submitButton.disabled = false;
+                submitButton.textContent = "Submit";
+            }
+
+        });
+
+
+        // Set the default India flag and phone rule when the page starts.
+        updateCountryFlag();
+        updatePhonePattern();
+
+    </script>
+
+</body>
+</html>
